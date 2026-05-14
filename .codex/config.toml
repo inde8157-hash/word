@@ -18,17 +18,17 @@ args = ["mcp-server-fetch"]
 [mcp_servers.intercept]
 command = "npx"
 args = ["-y", "intercept-mcp"]
+startup_timeout_sec = 30
 
 # 3. Brave Search — real-time web search for fact-checking and verifying claims.
 #    Critical for the skill workflow step: "Verify claims that may be current,
 #    factual, pricing-related, legal, platform-policy-related."
 #    Free tier: 2000 queries/month at https://brave.com/search/api/
+#    Get your key: https://api.search.brave.com/app/keys
 [mcp_servers.brave-search]
 command = "npx"
-args = ["-y", "@anthropic-ai/brave-search-mcp-server"]
-
-[mcp_servers.brave-search.env]
-BRAVE_API_KEY = "${BRAVE_API_KEY}"
+args = ["-y", "@brave/brave-search-mcp-server"]
+env_vars = ["BRAVE_API_KEY"]
 
 # 4. AI Humanizer — transform AI-generated text into natural, human-like writing.
 #    Directly addresses the goal of making posts feel less robotic and more authentic.
@@ -36,3 +36,4 @@ BRAVE_API_KEY = "${BRAVE_API_KEY}"
 [mcp_servers.ai-humanizer]
 command = "npx"
 args = ["-y", "ai-humanizer-mcp-server"]
+startup_timeout_sec = 30
