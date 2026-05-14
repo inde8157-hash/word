@@ -1,0 +1,38 @@
+# Codex project-scoped configuration
+# MCP servers for improving X post writing quality with the x-high-signal-posts skill
+
+################################################################################
+# MCP Servers
+################################################################################
+
+# 1. Fetch MCP — read source articles, guides, and web pages as clean markdown.
+#    Critical for the skill workflow step: "Read the full source first."
+#    No API key required.
+[mcp_servers.fetch]
+command = "uvx"
+args = ["mcp-server-fetch"]
+
+# 2. intercept-mcp — robust web fetcher with multi-tier fallback chain.
+#    Handles paywalls, JS-rendered pages, and blocked content better than basic fetch.
+#    No API key required.
+[mcp_servers.intercept]
+command = "npx"
+args = ["-y", "intercept-mcp"]
+
+# 3. Brave Search — real-time web search for fact-checking and verifying claims.
+#    Critical for the skill workflow step: "Verify claims that may be current,
+#    factual, pricing-related, legal, platform-policy-related."
+#    Free tier: 2000 queries/month at https://brave.com/search/api/
+[mcp_servers.brave-search]
+command = "npx"
+args = ["-y", "@anthropic-ai/brave-search-mcp-server"]
+
+[mcp_servers.brave-search.env]
+BRAVE_API_KEY = "${BRAVE_API_KEY}"
+
+# 4. AI Humanizer — transform AI-generated text into natural, human-like writing.
+#    Directly addresses the goal of making posts feel less robotic and more authentic.
+#    Powered by text2go.ai — sign up for free at https://www.text2go.ai/
+[mcp_servers.ai-humanizer]
+command = "npx"
+args = ["-y", "ai-humanizer-mcp-server"]
