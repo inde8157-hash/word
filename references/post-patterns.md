@@ -132,9 +132,28 @@ Me realizing why my Claude Project worked once then broke
 The model did not get dumber. The context got dirtier.
 ```
 
+## Hook Diversity Checklist
+
+When writing multiple posts, verify hook variety:
+
+- [ ] No two posts in the same batch start with the same hook category
+- [ ] No post starts with "most people..." or any crowd-contrast opener
+- [ ] At least 3 different hook categories are used across a 3-post batch
+
+Hook categories to rotate:
+1. Number-first ($X, N%, count)
+2. Concrete failure (broke, failed, zero results)
+3. Command / artifact / setting (file name, config, flag)
+4. Timeline / timestamp (date, deadline, time window)
+5. Personal action ("I did X", "I stopped X")
+6. Counter-intuitive claim (the opposite of what you'd expect)
+7. Direct question (a real question the reader would ask)
+
 ## Checklist Before Publishing
 
 - [ ] First line works as a standalone hook
+- [ ] Hook does NOT start with "most people..." or similar crowd-contrast
+- [ ] Hook category differs from the previous post in this batch
 - [ ] At least one specific number, date, cost, or threshold
 - [ ] Reader knows what to do after reading
 - [ ] No prohibited words (expensive, noise, signal, unlock, operator, state)

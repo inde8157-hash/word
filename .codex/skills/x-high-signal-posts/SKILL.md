@@ -73,6 +73,65 @@ Avoid generic lines like:
 - The trick is not X. It is Y.
 - The move is not X. It is Y.
 
+## Hook Diversity
+
+Every post opens with a hook - the first line. Hooks must rotate across categories. Never use the same hook category twice in a row when producing multiple posts. Never default to "most people..." as an opener.
+
+### Hook Categories (rotate between these)
+
+**1. Number-first** — lead with a specific cost, count, percentage, or threshold from the source.
+```
+$97/month tool replaced my $2,400/month agency.
+3 API calls. That is the entire backend.
+14 deployment environments. 1 YAML file.
+```
+
+**2. Concrete failure** — lead with a specific thing that broke, failed, or produced zero results.
+```
+The agent ran for 72 hours. It completed 0 tasks.
+I shipped to 12,000 users with a broken env variable.
+The checkout page loaded 11 analytics scripts before the buy button.
+```
+
+**3. Command / artifact / setting** — lead with a file, flag, config line, or tool name.
+```
+One line in .env changed the response from 800 tokens to 140.
+Found the setting buried in Project > Advanced > Model behavior.
+CONTEXT_WINDOW=8192. That was the entire fix.
+```
+
+**4. Timeline / timestamp** — lead with a time reference that creates urgency or surprise.
+```
+6 months ago this setup did not exist.
+Between 2am and 5am the API costs drop 40%.
+The deadline is July 1. After that the free tier disappears.
+```
+
+**5. Personal action / discovery** — lead with "I did X" or "I stopped doing X".
+```
+I stopped opening Claude 12 times a day.
+I replaced the entire review pipeline with one prompt.
+I ran the same deploy 3 times before checking the logs.
+```
+
+**6. Counter-intuitive claim** — lead with a statement that contradicts the obvious assumption.
+```
+The model was right. The prompt was feeding it last week's schema.
+Faster inference made the output worse.
+The cheapest plan had the best rate limits for batch jobs.
+```
+
+**7. Direct question** — open with a question the reader would actually ask themselves.
+```
+Why does the agent keep re-reading the same file?
+What happens when your context window is 90% old JSON?
+How many of your API calls are actually retries?
+```
+
+### Hook rotation rule
+
+When generating multiple posts in one session, track which hook category was used and pick a different one for the next post. If you catch yourself starting with "most..." or any crowd-contrast phrasing, stop and rewrite using one of the 7 categories above.
+
 ## Formats
 
 ### TLDR Guide
@@ -95,7 +154,7 @@ Give a sharp but fair thesis.
 
 Use this format when the source has a strategic lesson:
 
-- what most people think
+- the common assumption or surface-level reading (do NOT open with "most people..." - name the specific belief or behavior instead)
 - why that first reading misses the mechanism
 - what the real operating layer is
 - what to build, learn, skip, or check instead
